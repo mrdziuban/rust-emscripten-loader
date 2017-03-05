@@ -1,0 +1,14 @@
+{
+  "name": "rust-emscripten-loader",
+  "version": "0.0.1",
+  "author": "Matt Dziuban",
+  "description": "Rust loader module for webpack",
+  "dependencies": {
+    "toml": "^2.3.2"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:mrdziuban/rust-emscripten-loader"
+  },
+  "license": "UNLICENSED"
+}
