@@ -4,6 +4,7 @@
   "author": "Matt Dziuban",
   "description": "Rust loader module for webpack",
   "dependencies": {
+    "loader-utils": "^1.0.3",
     "toml": "^2.3.2"
   },
   "repository": {
