@@ -1,0 +1,23 @@
+[root]
+name = "rust-emscripten-loader-example"
+version = "0.1.0"
+dependencies = [
+ "webplatform 0.4.2 (git+https://github.com/mrdziuban/rust-webplatform.git)",
+]
+
+[[package]]
+name = "libc"
+version = "0.2.21"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+
+[[package]]
+name = "webplatform"
+version = "0.4.2"
+source = "git+https://github.com/mrdziuban/rust-webplatform.git#9316fd6ef1b143087ce5e41a22f44387c976f2cb"
+dependencies = [
+ "libc 0.2.21 (registry+https://github.com/rust-lang/crates.io-index)",
+]
+
+[metadata]
+"checksum libc 0.2.21 (registry+https://github.com/rust-lang/crates.io-index)" = "88ee81885f9f04bff991e306fea7c1c60a5f0f9e409e99f6b40e3311a3363135"
+"checksum webplatform 0.4.2 (git+https://github.com/mrdziuban/rust-webplatform.git)" = "<none>"

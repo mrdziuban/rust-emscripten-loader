@@ -1,0 +1,16 @@
+{
+  "name": "rust-emscripten-loader-example",
+  "version": "0.0.1",
+  "description": "",
+  "author": "Matt Dziuban",
+  "license": "UNLICENSED",
+  "scripts": {
+    "compile": "webpack --progress",
+    "serve": "http-server"
+  },
+  "dependencies": {
+    "rust-emscripten-loader": "../",
+    "http-server": "^0.9.0",
+    "webpack": "^2.2.1"
+  }
+}

@@ -11,5 +11,6 @@
     "type": "git",
     "url": "git@github.com:mrdziuban/rust-emscripten-loader"
   },
-  "license": "UNLICENSED"
+  "main": "index.js",
+  "license": "MIT"
 }
