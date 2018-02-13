@@ -43,6 +43,6 @@ module.exports = function(source) {
       return callback(null, '');
     }
 
-    callback(null, `(function(){\n${out}\n})();`);
+    callback(null, `var Module = Object.create(null); (function(Module){\n${out};\n})(Module); exports.Module = Module;`);
   });
 };
