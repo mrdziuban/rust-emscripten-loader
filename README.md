@@ -43,6 +43,7 @@ The following options can be added to the Webpack loader query:
 | `release` | Whether or not to pass the `--release` flag to cargo | false | false |
 | `target` | The output target of the cargo build. Available options are `asmjs` and `wasm`. | false | `asmjs` |
 | `outName` | The name of the output file for the `wasm` and `js` files when targeting `wasm` | Only when target is `wasm` | none |
+| `isWorkspace` | If true, searches for the build target directory one level above the source directory | false | false |
 
 ### Example
 

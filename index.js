@@ -19,12 +19,13 @@ module.exports = function(source) {
   const opts = loaderUtils.getOptions(this);
   const release = opts ? opts.release : false;
   const target = opts && opts.target ? targets[opts.target] : 'asmjs';
+  const crateDir = opts.isWorkspace ? path.join(srcDir, '..') : srcDir;
 
   if (!target) { return callback(new Error(`Unknown target: ${opts.target}`), null); }
   if (target === 'wasm32' && !opts.outName) { return callback(new Error('You must specify the `outName` option'), null); }
   const rustTarget = `${target}-unknown-emscripten`;
 
-  const outDir = path.join(srcDir, 'target', rustTarget, (release ? 'release' : 'debug'));
+  const outDir = path.join(crateDir, 'target', rustTarget, (release ? 'release' : 'debug'));
   const outFile = path.join(outDir, `${packageName}.js`);
   const cmd = `cargo build --target=${rustTarget}${release ? ' --release' : ''}`;
 
@@ -42,6 +43,6 @@ module.exports = function(source) {
       return callback(null, '');
     }
 
-    callback(null, `(function(){\n${out}\n})();`);
+    callback(null, `var Module = Object.create(null); (function(Module){\n${out};\n})(Module); exports.Module = Module;`);
   });
 };
